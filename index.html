@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Clothing Store!</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&family=Permanent+Marker&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- navvar -->
+
+    <nav class="navbar">
+        <h1 class="ms-4">Clothing Store!</h1>
+
+        <button class="shopping-cart-btn my-auto" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas"
+            aria-controls="offcanvas">
+            <img src="./images/shopping_cart_FILL0_wght400_GRAD0_opsz48.png" alt="">
+        </button>
+    </nav>
+
+    <!-- header -->
+
+    <div class="header text-center">
+        <img class="my-4" src="./images/t-shirt-128.png" alt="">
+    </div>
+
+    <!-- card-body -->
+
+    <div class="container">
+
+        <div class="py-3">
+            <h3 class="my-auto">Todos nuestros productos</h3>
+        </div>
+
+        <div id="index-clothes-container" class="row">
+
+        </div>
+
+    </div>
+    
+    <!-- footer -->
+
+    <footer class="sep-t pt-3 px-5 my-3 d-flex">
+       <div class="container">
+        <div class="row">
+            <div class="col-6 sep">
+                <p>Informacion</p>
+                <hr>
+                <p class="m-0"><small>Contacto</small></p>
+                <p class="m-0"><small>Terminos y condiciones</small></p>
+                <p class="m-0"><small>Cambios y devoluciones</small></p>
+                <p class="m-0"><small>Politicas de privacidad</small></p>
+            </div>
+            <div class="col-6">
+                <p>Sobre nosotros</p>
+                <hr>
+                <p><small>Somos una tienda de ropa con base en Estados Unidos.</small></p>
+            </div>
+           </div>
+       </div>
+    </footer>
+
+    <!-- shopping cart -->
+
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas" aria-labelledby="offcanvas">
+        <div class="offcanvas-header sep-b">
+            <h5 class="offcanvas-title">Carrito de compras</h5>
+            <button type="button" class="shopping-cart-close-btn" data-bs-dismiss="offcanvas" aria-label="Close"><img
+                    src="./images/close_FILL0_wght400_GRAD0_opsz48.png" alt=""></button>
+        </div>
+
+        <div class="offcanvas-body overflow-auto">
+
+            <div class="card shopping-cart-card mb-3" id="CarritoCompra">
+               
+            </div>
+
+        </div>
+
+        <div class="d-flex justify-content-between p-3 sep-t">
+            <div class="d-flex flex-column justify-content-center">
+                <p class="m-0" id="TotalCarrito">Subtotal: $0 usd</p>
+            </div>
+            <div>
+                <button class="red-btn" data-bs-toggle="modal" data-bs-target="#checkoutModal">Finalizar pedido</button>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- checkout -->
+
+    <div class="modal fade" id="checkoutModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content">
+
+                <div class="modal-header header p-3">
+                    <button class="continue-shopping-btn" data-bs-dismiss="modal"><img class="mb-1"
+                            src="./images/arrow_back_FILL0_wght400_GRAD0_opsz48.png" alt=""> Seguir comprando</button>
+                    <h2>Clothing Store!</h2>
+                </div>
+
+                <div class="modal-body mt-5">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-7 sep-e">
+                                <form action="">
+                                    <h4>Contacto</h4>
+                                    <hr>
+
+                                    <label for="email" class="form-label">Correo electronico</label>
+                                    <input type="email" class="form-control mb-2" name="email">
+
+                                    <h4 class="mt-5">Direccion de envio</h4>
+                                    <hr>
+
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <label for="name" class="form-label">Nombre(s)</label>
+                                            <input type="text" class="form-control mb-2" name="name">
+                                        </div>
+                                        <div class="col-6">
+                                            <label for="surname" class="form-label">Apellido(s)</label>
+                                            <input type="text" class="form-control mb-2" name="surname">
+                                        </div>
+                                    </div>
+
+                                    <label for="st-name" class="form-label">Calle</label>
+                                    <input type="email" class="form-control mb-2" name="st-name">
+
+                                    <div class="row">
+                                        <div class="col-4">
+                                            <label for="ext-number" class="form-label">Numero exterior</label>
+                                            <input type="text" class="form-control mb-2" name="ext-number">
+                                        </div>
+                                        <div class="col-4">
+                                            <label for="int-number" class="form-label">Numero interior</label>
+                                            <input type="text" class="form-control mb-2" name="int-number">
+                                        </div>
+                                        <div class="col-4">
+                                            <label for="zip-code" class="form-label">Codigo postal</label>
+                                            <input type="text" class="form-control mb-2" name="zip-code">
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <label for="city" class="form-label">Ciudad</label>
+                                            <input type="text" class="form-control mb-2" name="city">
+                                        </div>
+                                        <div class="col-6">
+                                            <label for="state" class="form-label">Estado</label>
+                                            <input type="text" class="form-control mb-2" name="state">
+                                        </div>
+                                    </div>
+
+                                    <label for="country" class="form-label">Pais</label>
+                                    <input type="email" class="form-control mb-2" name="country">
+
+                                    <label for="phone-number" class="form-label">Telefono</label>
+                                    <input type="email" class="form-control mb-2" name="phone-number">
+
+                                </form>
+                            </div>
+                            <div class="col-5">
+                                <form action="">
+                                    <h4>Datos bancarios</h4>
+                                    <hr>
+
+                                    <label for="card-number" class="form-label">Numero de tarjeta</label>
+                                    <input type="text" class="form-control mb-2" name="card-number">
+
+                                    <label for="card-holder" class="form-label">Titular de la tarjeta</label>
+                                    <input type="text" class="form-control mb-2" name="card-holder">
+
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <label for="expiration-date" class="form-label">Vencimiento</label>
+                                            <input type="text" class="form-control mb-2" name="expiration-date">
+                                        </div>
+                                        <div class="col-6">
+                                            <label for="cvv" class="form-label">Cvv</label>
+                                            <input type="text" class="form-control mb-2" name="cvv">
+                                        </div>
+                                    </div>
+
+                                    <h4 class="mt-5">Resumen</h4>
+                                    <hr>
+                                </form>
+
+                                <div class="card mb-2 overflow-auto" style="width: 100%; height: 13.5rem;">
+                                    <ul class="list-group list-group-flush" id="ConfirmacionCompra">                                  
+                                    </ul>
+                                </div>
+
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <p class="m-0"><small id="SubtotalCompra">Subtotal: $0 usd</small></p>
+                                        <p class="m-0"><small >Envio: $5 usd</small></p>
+                                        <p class="m-0"><small id="TotalCompra">Total: $5 usd</small></p>
+                                    </div>
+                                    <div class="pt-4">
+                                        <button class="red-btn" data-bs-target="#confirmationModal"
+                                            data-bs-toggle="modal">Pagar</button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- confirmation -->
+
+    <div class="modal fade" id="confirmationModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="confirmationModal" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content py-3">
+                <div class="d-flex flex-column">
+                    <div class="d-flex justify-content-center">
+                        <img class="" src="./images/check_circle_FILL0_wght400_GRAD0_opsz48.png" alt="">
+                    </div>
+                    <p class="text-center my-3">¡Gracias por su compra!</p>
+                    <div class="d-flex justify-content-center">
+                        <button class="red-btn" onclick="location.reload()" data-bs-toggle="modal">Aceptar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <script src="./js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
